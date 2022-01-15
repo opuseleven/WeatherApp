@@ -1,0 +1,125 @@
+{
+  "cod" : "200",
+  "message" : 0,
+  "cnt" : 3,
+  "list" : [
+    {
+      "dt" : 1617051600,
+      "main" : {
+        "temp" : 289.70999999999998,
+        "feels_like" : 286.16000000000003,
+        "temp_min" : 289.12,
+        "temp_max" : 289.70999999999998,
+        "pressure" : 1021,
+        "sea_level" : 1021,
+        "grnd_level" : 1005,
+        "humidity" : 31,
+        "temp_kf" : 0.58999999999999997
+      },
+      "weather" : [
+        {
+          "id" : 800,
+          "main" : "Clear",
+          "description" : "clear sky",
+          "icon" : "01d"
+        }
+      ],
+      "clouds" : {
+        "all" : 1
+      },
+      "wind" : {
+        "speed" : 2.1000000000000001,
+        "deg" : 159
+      },
+      "visibility" : 10000,
+      "pop" : 0,
+      "sys" : {
+        "pod" : "d"
+      },
+      "dt_txt" : "2021-03-29 21:00:00"
+    },
+    {
+      "dt" : 1617062400,
+      "main" : {
+        "temp" : 286.63,
+        "feels_like" : 284.25,
+        "temp_min" : 285.63,
+        "temp_max" : 286.63,
+        "pressure" : 1022,
+        "sea_level" : 1022,
+        "grnd_level" : 1004,
+        "humidity" : 52,
+        "temp_kf" : 1
+      },
+      "weather" : [
+        {
+          "id" : 800,
+          "main" : "Clear",
+          "description" : "clear sky",
+          "icon" : "01d"
+        }
+      ],
+      "clouds" : {
+        "all" : 0
+      },
+      "wind" : {
+        "speed" : 1.47,
+        "deg" : 165
+      },
+      "visibility" : 10000,
+      "pop" : 0,
+      "sys" : {
+        "pod" : "d"
+      },
+      "dt_txt" : "2021-03-30 00:00:00"
+    },
+    {
+      "dt" : 1617073200,
+      "main" : {
+        "temp" : 283.99000000000001,
+        "feels_like" : 281.48000000000002,
+        "temp_min" : 283.56,
+        "temp_max" : 283.99000000000001,
+        "pressure" : 1022,
+        "sea_level" : 1022,
+        "grnd_level" : 1004,
+        "humidity" : 66,
+        "temp_kf" : 0.42999999999999999
+      },
+      "weather" : [
+        {
+          "id" : 800,
+          "main" : "Clear",
+          "description" : "clear sky",
+          "icon" : "01n"
+        }
+      ],
+      "clouds" : {
+        "all" : 0
+      },
+      "wind" : {
+        "speed" : 1.8999999999999999,
+        "deg" : 164
+      },
+      "visibility" : 10000,
+      "pop" : 0,
+      "sys" : {
+        "pod" : "n"
+      },
+      "dt_txt" : "2021-03-30 03:00:00"
+    }
+  ],
+  "city" : {
+    "id" : 4644585,
+    "name" : "Nashville",
+    "coord" : {
+      "lat" : 36.165900000000001,
+      "lon" : -86.784400000000005
+    },
+    "country" : "US",
+    "population" : 530852,
+    "timezone" : -18000,
+    "sunrise" : 1617017828,
+    "sunset" : 1617062772
+  }
+}
