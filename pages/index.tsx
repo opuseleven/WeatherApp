@@ -1,7 +1,7 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
 import styles from '../styles/Home.module.css'
-import { Banner } from '../components'
+import { Banner, Footer } from '../components'
 
 const Home: NextPage = () => {
 
@@ -29,7 +29,7 @@ const Home: NextPage = () => {
       </main>
 
       <footer className={styles.footer}>
-
+        <Footer />
       </footer>
     </div>
   )
