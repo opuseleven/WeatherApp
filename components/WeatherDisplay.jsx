@@ -1,12 +1,11 @@
 import { DayDisplay } from '.';
 // import Day type & mapToDay()
 
-function WeatherDisplay({ data }) {
+function WeatherDisplay({ weather }) {
 
-  const weatherData = data['list'];
-  const today = weatherData[0];
-  const tomorrow = weatherData[1];
-  const dayAfter = weatherData[2];
+  const today = weather.today;
+  const tomorrow = weather.tomorrow;
+  const dayAfter = weather.dayAfter;
 
   return (
     <div>
