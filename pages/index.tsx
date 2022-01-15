@@ -1,7 +1,7 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
 import styles from '../styles/Home.module.css'
-import { Banner, Footer } from '../components'
+import { Banner, Info, Footer, SearchBar } from '../components'
 
 const Home: NextPage = () => {
 
@@ -21,6 +21,8 @@ const Home: NextPage = () => {
         <div>
           <Banner />
         </div>
+
+        <Info />
 
         <p className={styles.description}>
 
