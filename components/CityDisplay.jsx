@@ -1,12 +1,9 @@
+function CityDisplay({ city }) {
 
+  const cityName = city.name;
 
-function CityDisplay({ data }) {
-
-  const cityData = data['city'];
-  const cityName = cityData['name'];
-
-  let lat = cityData['coord']['lat'];
-  let lon = cityData['coord']['lon'];
+  let lat = Number(city.lat);
+  let lon = Number(city.lon);
   let latDir = 'N';
   let lonDir = 'E';
   if (lat < 0) {
