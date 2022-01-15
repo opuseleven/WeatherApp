@@ -1,6 +1,6 @@
 import '../styles/globals.css'
 import type { AppProps } from 'next/app'
-import { apiKey, getCity } from '../services'
+import { apiKey, getCity, getWeather } from '../services'
 import { useField, SearchBar, CityDisplay, WeatherDisplay } from '../components'
 import { useState } from 'react'
 import * as tempData from '../data/testdata.json'
@@ -25,7 +25,7 @@ function App({ Component, pageProps }: AppProps) {
       <Component {...pageProps} />
       <SearchBar handleClick={handleClick} searchInput={searchInput} />
       <CityDisplay city={getCity(data['city'])} />
-      <WeatherDisplay data={data} />
+      <WeatherDisplay weather={getWeather(data['list'])} />
     </div>
   );
 }
