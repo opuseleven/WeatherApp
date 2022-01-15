@@ -3,12 +3,12 @@ import { getWeatherImage } from '../services';
 
 function DayDisplay({ day }) {
 
-  const weather = day['weather'][0]['main'];
-  const temp = parseInt((day['main']['temp'] * 1.8 - 459.67), 10);
-  const humidity = day['main']['humidity'];
-  const weatherDescription = day['weather'][0]['description'];
-  const precipitation = Number(day['pop']) * 100;
-  const weatherId = parseInt(day['weather'][0]['id']);
+  const weather = day.weather;
+  const temp = day.temp;
+  const humidity = day.humidity;
+  const weatherDescription = day.weatherDescription;
+  const precipitation = day.precipitation;
+  const weatherId = day.weatherId;
 
   const weatherImage = getWeatherImage(weatherId);
 
