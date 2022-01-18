@@ -1,16 +1,22 @@
 import Image from 'next';
 import { getWeatherImage } from '../services';
+import { useState, useEffect } from 'react';
 
 function DayDisplay({ day }) {
 
-  const weather = day.weather;
-  const temp = day.temp;
-  const humidity = day.humidity;
-  const weatherDescription = day.weatherDescription;
-  const precipitation = day.precipitation;
-  const weatherId = day.weatherId;
+  const [ state, setState ] = useState(day);
 
-  const weatherImage = getWeatherImage(weatherId);
+  useEffect(() => {
+    const weather = day.weather;
+    const temp = day.temp;
+    const humidity = day.humidity;
+    const weatherDescription = day.weatherDescription;
+    const precipitation = day.precipitation;
+    const weatherId = day.weatherId;
+
+    const weatherImage = getWeatherImage(weatherId);
+    
+  }, [day, state])
 
   return (
     <div>

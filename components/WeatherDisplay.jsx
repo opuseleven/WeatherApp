@@ -1,11 +1,17 @@
-import { DayDisplay } from '.';
-// import Day type & mapToDay()
+import DayDisplay from '.';
+import { useState, useEffect } from 'react';
+// import Day type & mapTo
 
 function WeatherDisplay({ weather }) {
 
-  const today = weather.today;
-  const tomorrow = weather.tomorrow;
-  const dayAfter = weather.dayAfter;
+  const [ state, setState ] = useState;
+
+  useEffect(() => {
+    const today = weather.today;
+    const tomorrow = weather.tomorrow;
+    const dayAfter = weather.dayAfter;
+
+  }, [weather, state]);
 
   return (
     <div>
