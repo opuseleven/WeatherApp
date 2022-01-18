@@ -2,40 +2,59 @@ import { useState, useEffect } from 'react';
 
 function CityDisplay({ city }) {
 
-  const [ state, setState ] = useState(city);
+  const [lat, setLat] = useState(Number(city.lat));
+  const [lon, setLon] = useState(Number(city.lon));
+  const [latDir, setLatDir] = useState('N');
+  const [lonDir, setLonDir] = useState('E');
+  if (lat < 0) {
+    setLatDir('S');
+    setLat(lat * -1);
+  }
+  if (lon < 0) {
+    setLonDir('W');
+    setLon(lon * -1);
+  }
+
+  const [degreesLat, setDegreesLat] = useState(Math.floor(lat));
+  const [degToMinLat, setDegToMinLat] = useState((lat - degreesLat) * 60);
+  const [minutesLat, setMinutesLat] = useState(Math.floor(degToMinLat));
+  const [secondsLat, setSecondsLat] = useState(Math.floor((degToMinLat - minutesLat) * 60));
+
+  const [degreesLon, setDegreesLon] = useState(Math.floor(lon));
+  const [degToMinLon, setDegToMinLon] = useState((lon - degreesLon) * 60);
+  const [minutesLon, setMinutesLon] = useState(Math.floor(degToMinLon));
+  const [secondsLon, setSecondsLon] = useState(Math.floor((degToMinLon - minutesLon) * 60));
 
   useEffect(() => {
-    const cityName = city.name;
-
-    let lat = Number(city.lat);
-    let lon = Number(city.lon);
-    let latDir = 'N';
-    let lonDir = 'E';
+    setLat(Number(city.lat));
+    setLon(Number(city.lon));
+    setLatDir('N');
+    setLonDir('E');
     if (lat < 0) {
-      latDir = 'S';
-      lat = lat * -1;
+      setLatDir('S');
+      setLat(lat * -1);
     }
     if (lon < 0) {
-      lonDir = 'W';
-      lon = lon * -1;
+      setLonDir('W');
+      setLon(lon * -1);
     }
 
-    const degreesLat = Math.floor(lat);
-    const degToMinLat = (lat - degreesLat) * 60;
-    const minutesLat = Math.floor(degToMinLat);
-    const secondsLat = Math.floor((degToMinLat - minutesLat) * 60);
+    setDegreesLat(Math.floor(lat));
+    setDegToMinLat((lat - degreesLat) * 60);
+    setMinutesLat(Math.floor(degToMinLat));
+    setSecondsLat(Math.floor((degToMinLat - minutesLat) * 60));
 
-    const degreesLon = Math.floor(lon);
-    const degToMinLon = (lon - degreesLon) * 60;
-    const minutesLon = Math.floor(degToMinLon);
-    const secondsLon = Math.floor((degToMinLon - minutesLon) * 60);
+    setDegreesLon(Math.floor(lon));
+    setDegToMinLon((lon - degreesLon) * 60);
+    setMinutesLon(Math.floor(degToMinLon));
+    setSecondsLon(Math.floor((degToMinLon - minutesLon) * 60));
 
-  }, [city, state])
+  }, [city])
 
   return (
     <div>
-      <h2>{cityName}</h2>
-      <p>{degreesLat}° {minutesLat}' {secondsLat}" {latDir} x {degreesLon}° {minutesLon}' {secondsLon}" {lonDir}</p>
+      <h2>{city.name}</h2>
+      <p>{lat}° {minutesLat}' {secondsLat}" {latDir} x {degreesLon}° {minutesLon}' {secondsLon}" {lonDir}</p>
     </div>
   );
 }

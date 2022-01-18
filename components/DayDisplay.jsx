@@ -4,19 +4,23 @@ import { useState, useEffect } from 'react';
 
 function DayDisplay({ day }) {
 
-  const [ state, setState ] = useState(day);
+  const [weather, setWeather] = useState(day.weather);
+  const [temp, setTemp] = useState(day.temp);
+  const [humidity, setHumidity] = useState(day.humidity);
+  const [weatherDescription, setWeatherDescription] = useState(day.weatherDescription);
+  const [precipitation, setPrecipitation] = useState(day.precipitation);
+  const [weatherId, setWeatherId] = useState(day.weatherId);
+  const [weatherImage, setWeatherImage] = useState(getWeatherImage(weatherId));
 
   useEffect(() => {
-    const weather = day.weather;
-    const temp = day.temp;
-    const humidity = day.humidity;
-    const weatherDescription = day.weatherDescription;
-    const precipitation = day.precipitation;
-    const weatherId = day.weatherId;
-
-    const weatherImage = getWeatherImage(weatherId);
-    
-  }, [day, state])
+    setWeather(day.weather);
+    setTemp(day.temp);
+    setHumidity(day.humidity);
+    setWeatherDescription(day.weatherDescription);
+    setPrecipitation(day.precipitation);
+    setWeatherId(day.weatherId);
+    setWeatherImage(getWeatherImage(weatherId));
+  }, [day])
 
   return (
     <div>

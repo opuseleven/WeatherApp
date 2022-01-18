@@ -4,14 +4,15 @@ import { useState, useEffect } from 'react';
 
 function WeatherDisplay({ weather }) {
 
-  const [ state, setState ] = useState;
+  const [today, setToday] = useState(weather.today);
+  const [tomorrow, setTomorrow] = useState(weather.tomorrow);
+  const [dayAfter, setDayAfter] = useState(weather.dayAfter);
 
   useEffect(() => {
-    const today = weather.today;
-    const tomorrow = weather.tomorrow;
-    const dayAfter = weather.dayAfter;
-
-  }, [weather, state]);
+    setToday(weather.today);
+    setTomorrow(weather.tomorrow);
+    setDayAfter(weather.dayAfter);
+  }, [weather]);
 
   return (
     <div>
