@@ -1,12 +1,10 @@
-import Link from 'next';
+import Link from 'next/link';
 
 function Footer() {
   return (
     <div>
-      <footer>
-        <h5>Data provided by:</h5>
-        <Link href="www.openweathermap.org"><h6>openweathermap.org</h6></Link>
-      </footer>
+      <h5>Data provided by: </h5>
+      <h6><Link href="www.openweathermap.org">openweathermap.org</Link></h6>
     </div>
   );
 }
