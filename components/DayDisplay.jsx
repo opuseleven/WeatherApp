@@ -1,20 +1,26 @@
 import Image from 'next';
 import { useState, useEffect } from 'react';
 
-function DayDisplay({ day }) {
+function DayDisplay({ weather, temp, humidity, precip }) {
 
-  const [dayData, setDayData] = useState();
+  const [mainWeather, setMainWeather] = useState();
+  const [temperature, setTemperature] = useState();
+  const [humid, setHumid] = useState();
+  const [pop, setPop] = useState();
 
   useEffect(() => {
-    setDayData(day);
-  }, [day]);
+    setMainWeather(weather);
+    setTemperature(temp);
+    setHumid(humidity);
+    setPop(precip);
+  })
 
   return (
     <div>
-      <h3>{dayData['weather']['main']}</h3>
-      <p>Temperature: {dayData['main']['temp']}°F</p>
-      <p>Humidity: {dayData['main']['humidity']}%</p>
-      <p>Precipitation: {dayData['pop']}%</p>
+      <h3>{weatherMain}</h3>
+      <p>Temperature: {temperature}°F</p>
+      <p>Humidity: {humid}%</p>
+      <p>Precipitation: {pop}%</p>
     </div>
   );
 }
