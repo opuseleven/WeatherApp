@@ -22,10 +22,10 @@ function WeatherDisplay({ data }) {
         <div>
           {today && (
             <div>
-            <h3>{today['weather']['main']}</h3>
-            <p>Temperature: {today['main']['temp']}°F</p>
-            <p>Humidity: {today['main']['humidity']}%</p>
-            <p>Precipitation: {today['pop']}%</p>
+              <h3>{today['weather']['main']}</h3>
+              <p>Temperature: {today['main']['temp']}°F</p>
+              <p>Humidity: {today['main']['humidity']}%</p>
+              <p>Precipitation: {today['pop']}%</p>
             </div>
             )
           }
