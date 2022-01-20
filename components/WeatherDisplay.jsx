@@ -1,4 +1,3 @@
-import DayDisplay from '.';
 import { useState, useEffect } from 'react';
 
 function WeatherDisplay({ data }) {
