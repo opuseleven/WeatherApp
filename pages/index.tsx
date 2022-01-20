@@ -4,11 +4,13 @@ import styles from '../styles/Home.module.css'
 import { Banner, Info, Footer, WeatherDisplay, CityDisplay, useField } from '../components'
 import { useState, useEffect } from 'react'
 import axios from 'axios'
+import { getWeather } from '../services';
+import { Weather } from '../types';
 import tempData from '../data/testdata.json';
 
 const Home: NextPage = () => {
 
-  const [citySearch, setCitySearch] = useState("Nashville");
+  const [citySearch, setCitySearch] = useState<string>("Nashville");
   const [data, setData] = useState(tempData);
   const apiKey = process.env.REACT_APP_API_KEY;
   const searchInput = useField('text');
