@@ -1,13 +1,12 @@
 import { useState, useEffect } from 'react';
-import { City } from '../types';
 import { getCity } from '../services';
 
 function CityDisplay({ data }) {
 
-  const [city, setCity] = useState<City>();
+  const [city, setCity] = useState(null);
 
   useEffect(() => {
-    const newCity: City = getCity(data['city']);
+    const newCity = getCity(data['city']);
     setCity(newCity);
   }, [data])
 

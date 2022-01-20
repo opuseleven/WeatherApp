@@ -1,18 +1,17 @@
 import { useState, useEffect } from 'react';
-import { Day } from '../types';
 import { getDay } from '../services';
 
 function WeatherDisplay({ data }) {
 
-  const [today, setToday] = useState<Day>();
-  const [tomorrow, setTomorrow] = useState<Day>();
-  const [dayAfter, setDayAfter] = useState<Day>();
+  const [today, setToday] = useState();
+  const [tomorrow, setTomorrow] = useState();
+  const [dayAfter, setDayAfter] = useState();
 
   useEffect(() => {
     const weatherData = data['list'];
-    const todayDay: Day = getDay(weatherData[0]);
-    const tomorrowDay: Day = getDay(weatherData[1]);
-    const dayAfterDay: Day = getDay(weatherData[2]);
+    const todayDay = getDay(weatherData[0]);
+    const tomorrowDay = getDay(weatherData[1]);
+    const dayAfterDay = getDay(weatherData[2]);
     setToday(todayDay);
     setTomorrow(tomorrowDay);
     setDayAfter(dayAfterDay);

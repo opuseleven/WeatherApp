@@ -29,7 +29,7 @@ const Home: NextPage = () => {
 
   useEffect(() => {
     refreshData()
-  }, []);
+  }, [data]);
 
   return (
     <div className={styles.container}>
