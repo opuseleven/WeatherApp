@@ -3,9 +3,9 @@ import { getDay } from '../services';
 
 function WeatherDisplay({ data }) {
 
-  const [today, setToday] = useState();
-  const [tomorrow, setTomorrow] = useState();
-  const [dayAfter, setDayAfter] = useState();
+  const [today, setToday] = useState(null);
+  const [tomorrow, setTomorrow] = useState(null);
+  const [dayAfter, setDayAfter] = useState(null);
 
   useEffect(() => {
     const weatherData = data['list'];
