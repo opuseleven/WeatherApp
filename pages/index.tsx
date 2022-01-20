@@ -1,21 +1,28 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
 import styles from '../styles/Home.module.css'
-import { Banner, Info, Footer, WeatherDisplay, CityDisplay } from '../components'
+import { Banner, Info, Footer, WeatherDisplay, CityDisplay, useField } from '../components'
 import { useState, useEffect } from 'react'
 import axios from 'axios'
-import tempData from '../data/testdata.json'
+import tempData from '../data/testdata.json';
 
 const Home: NextPage = () => {
 
   const [citySearch, setCitySearch] = useState("Nashville");
   const [data, setData] = useState(tempData);
   const apiKey = process.env.REACT_APP_API_KEY;
+  const searchInput = useField('text');
 
   function refreshData() {
     const newUrl = 'https://api.openweathermap.org/data/2.5/forecast?q=' + citySearch + '&cnt=3&appid=' + apiKey;
     axios
       .request({url: newUrl}).then((response) => setData(response.data));
+  }
+
+  function handleClick(e: any) {
+    e.preventDefault();
+    setCitySearch(searchInput.value);
+    refreshData();
   }
 
   useEffect(() => {
@@ -41,6 +48,13 @@ const Home: NextPage = () => {
         </div>
         <div>
           <Info />
+        </div>
+
+        <div>
+          <form onSubmit={handleClick}>
+            <input {...searchInput} />
+            <button>Search</button>
+          </form>
         </div>
 
         <div>
