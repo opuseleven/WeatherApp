@@ -62,7 +62,7 @@ const Home: NextPage = () => {
           )}
         </div>
 
-        <div className={styles.grid}>
+        <div>
           {data && (
             <WeatherDisplay data={data} />
             )

@@ -19,7 +19,7 @@ function WeatherDisplay({ data }) {
   }, [data]);
 
   return (
-    <div>
+    <div className={styles.grid}>
       <div className={styles.card}>
         <h3>Today:</h3>
         <hr />
