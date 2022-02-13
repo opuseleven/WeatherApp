@@ -17,7 +17,7 @@ const Home: NextPage = () => {
 
   function refreshData() {
     const newUrl = 'https://api.openweathermap.org/data/2.5/forecast?q=' + citySearch + '&cnt=3&appid=' + apiKey;
-    const testUrl = '/api/testdata'
+    const testUrl = '/api/testdata' // only used for testing
     axios
       .request({url: newUrl}).then((response) => setData(response.data));
   }
