@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { getDay } from '../services';
+import styles from '../styles/Home.module.css';
 
 function WeatherDisplay({ data }) {
 
@@ -19,7 +20,7 @@ function WeatherDisplay({ data }) {
 
   return (
     <div>
-      <div>
+      <div className={styles.card}>
         <h3>Today:</h3>
         <hr />
         <div>
@@ -35,7 +36,7 @@ function WeatherDisplay({ data }) {
           }
         </div>
       </div>
-      <div>
+      <div className={styles.card}>
         <h3>Tomorrow:</h3>
         <hr />
         <div>
@@ -51,7 +52,7 @@ function WeatherDisplay({ data }) {
           }
         </div>
       </div>
-      <div>
+      <div className={styles.card}>
         <h3>Day After:</h3>
         <hr />
         <div>

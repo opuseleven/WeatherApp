@@ -42,11 +42,7 @@ const Home: NextPage = () => {
 
       <main className={styles.main}>
 
-        <h1 className={styles.title}>
-          WeatherApp
-        </h1>
-
-        <div>
+        <div className={styles.title}>
           <Banner />
         </div>
         <div>
@@ -66,7 +62,7 @@ const Home: NextPage = () => {
           )}
         </div>
 
-        <div>
+        <div className={styles.grid}>
           {data && (
             <WeatherDisplay data={data} />
             )
