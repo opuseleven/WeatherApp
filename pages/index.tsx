@@ -17,6 +17,7 @@ const Home: NextPage = () => {
 
   function refreshData() {
     const newUrl = 'https://api.openweathermap.org/data/2.5/forecast?q=' + citySearch + '&cnt=3&appid=' + apiKey;
+    const testUrl = '/api/testdata'
     axios
       .request({url: newUrl}).then((response) => setData(response.data));
   }
@@ -29,7 +30,7 @@ const Home: NextPage = () => {
 
   useEffect(() => {
     refreshData()
-  }, [data]);
+  }, []); // hopefully removing [data] fixed refreshing bug. TEST.
 
   return (
     <div className={styles.container}>
