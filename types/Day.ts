@@ -4,7 +4,8 @@ export interface Day {
   humidity: string,
   weatherDescription: string,
   precipitation: number,
-  weatherId: number
+  weatherId: number,
+  weatherImage?: string
 }
 
 // possibly add weatherImage?
