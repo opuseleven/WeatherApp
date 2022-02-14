@@ -82,8 +82,8 @@
   max-width: 300px;
 }
 
-.newcard {
-  
+.imagecontainer {
+    background-color: #282c34;
 }
 
 .card:hover,
