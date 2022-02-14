@@ -7,7 +7,7 @@ function getDay(dayData: any) {
     humidity: dayData['main']['humidity'],
     weatherDescription: dayData['weather'][0]['description'],
     precipitation: Number(dayData['pop']) * 100,
-    weatherId: parseInt(dayData['weather'][0]['id'])
+    weatherId: Number(dayData['weather'][0]['id'])
   }
   return day;
 }
