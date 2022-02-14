@@ -1,6 +1,8 @@
 import { useState, useEffect } from 'react';
 import { getDay } from '../services';
 import styles from '../styles/Home.module.css';
+import Image from 'next/image';
+import { getWeatherImage } from '../services';
 
 function WeatherDisplay({ data }) {
 
@@ -22,12 +24,21 @@ function WeatherDisplay({ data }) {
     <div className={styles.grid}>
       <div className={styles.card}>
         <h3>Today:</h3>
+        <div className={styles.imagecontainer}>
+          {
+            today && (
+              <Image src={getWeatherImage(today.weatherId)} alt={today.weatherDescription} width={50} height={50} />
+            )
+          }
+        </div>
         <hr />
         <div>
           {
             today && (
               <div>
                 <h3>{today.weather}</h3>
+                <p>{today.weatherId}</p>
+                <p>{today.weatherDescription}</p>
                 <p>Temperature: {today.temp}°F</p>
                 <p>Humidity: {today.humidity}%</p>
                 <p>Precipitation: {today.precipitation}%</p>
@@ -38,6 +49,13 @@ function WeatherDisplay({ data }) {
       </div>
       <div className={styles.card}>
         <h3>Tomorrow:</h3>
+        <div className={styles.imagecontainer}>
+          {
+            tomorrow && (
+              <Image src={getWeatherImage(tomorrow.weatherId)} alt={tomorrow.weatherDescription} width={50} height={50} />
+            )
+          }
+        </div>
         <hr />
         <div>
           {
@@ -54,6 +72,13 @@ function WeatherDisplay({ data }) {
       </div>
       <div className={styles.card}>
         <h3>Day After:</h3>
+        <div className={styles.imagecontainer}>
+          {
+            dayAfter && (
+              <Image src={getWeatherImage(dayAfter.weatherId)} alt={dayAfter.weatherDescription} width={50} height={50} />
+            )
+          }
+        </div>
         <hr />
         <div>
           {
