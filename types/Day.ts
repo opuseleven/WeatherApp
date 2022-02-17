@@ -5,7 +5,7 @@ export interface Day {
   weatherDescription: string,
   precipitation: number,
   weatherId: number,
-  weatherImage?: string
+  weatherImage: string
 }
 
 // possibly add weatherImage?
