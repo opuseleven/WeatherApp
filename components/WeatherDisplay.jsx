@@ -26,7 +26,7 @@ function WeatherDisplay({ data }) {
         <div>
           {
             today && (
-              <RenderImage id={today.weatherId} alt={today.weatherDescription} />
+              <RenderImage image={today.weatherImage} alt={today.weatherDescription} />
             )
           }
         </div>
@@ -36,7 +36,6 @@ function WeatherDisplay({ data }) {
             today && (
               <div>
                 <h3>{today.weather}</h3>
-                <p>{today.weatherId}</p>
                 <p>{today.weatherDescription}</p>
                 <p>Temperature: {today.temp}°F</p>
                 <p>Humidity: {today.humidity}%</p>
@@ -51,7 +50,7 @@ function WeatherDisplay({ data }) {
         <div>
           {
             tomorrow && (
-              <RenderImage id={tomorrow.weatherId} alt={tomorrow.weatherDescription} />
+              <RenderImage image={tomorrow.weatherImage} alt={tomorrow.weatherDescription} />
             )
           }
         </div>
@@ -74,7 +73,7 @@ function WeatherDisplay({ data }) {
         <div>
           {
             dayAfter && (
-              <RenderImage id={dayAfter.weatherId} alt={dayAfter.weatherDescription} />
+              <RenderImage image={dayAfter.weatherImage} alt={dayAfter.weatherDescription} />
             )
           }
         </div>
