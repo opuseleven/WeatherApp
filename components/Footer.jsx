@@ -4,7 +4,7 @@ function Footer() {
   return (
     <div>
       <h5>Data provided by: </h5>
-      <h6><Link href="www.openweathermap.org">openweathermap.org</Link></h6>
+      <h6><Link href="https://www.openweathermap.org">openweathermap.org</Link></h6>
     </div>
   );
 }
