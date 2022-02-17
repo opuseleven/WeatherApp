@@ -3,14 +3,7 @@ import { getWeatherImage } from '../services';
 import Image from 'next/image';
 import styles from '../styles/Home.module.css';
 
-function RenderImage({ id, alt }) {
-
-  const [image, setImage] = useState('');
-
-  useEffect(() => {
-    const weatherImage = getWeatherImage(id);
-    setImage(weatherImage);
-  }, [id])
+function RenderImage({ image, alt }) {
 
   return (
     <div className={styles.imagecontainer}>
