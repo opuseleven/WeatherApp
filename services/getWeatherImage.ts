@@ -1,37 +1,37 @@
-function getWeatherImage(weatherId: number) {
-  const id: number = weatherId;
-  let image = '';
+function getWeatherImage(weatherId: string) {
+  const id: number = Number(weatherId);
+  let image: string;
 
   if (id > 803) {
-    image = '../public/weather-images/cloudy3.png';
+    image = 'cloudy3.png';
   } else if (id > 801) {
-    image = '../public/weather-images/cloudy2.png';
+    image = 'cloudy2.png';
   } else if (id === 801) {
-    image = '../public/weather-images/cloudy.png';
+    image = 'cloudy.png';
   } else if (id === 800) {
-    image = '../public/weather-images/sunny.png';
+    image = 'sunny.png';
   } else if (id > 770) {
-    image = '../public/weather-images/stormy.png';
+    image = 'stormy.png';
   } else if (id > 699) {
-    image = '../public/weather-images/windy.png';
+    image = 'windy.png';
   } else if (id > 614) {
-    image = '../public/weather-images/winterymix.png';
+    image = 'winterymix.png';
   } else if (id > 610) {
-    image = '../public/weather-images/wintery.png';
+    image = 'wintery.png';
   } else if (id > 599) {
-    image = '../public/weather-images/snow.png';
+    image = 'snow.png';
   } else if (id > 501) {
-    image = '../public/weather-images/rainy.png';
+    image = 'rainy.png';
   } else if (id === 501) {
-    image = '../public/weather-images/rainy2.png';
+    image = 'rainy2.png';
   } else if (id === 500) {
-    image = '../public/weather-images/rainy1.png';
+    image = 'rainy1.png';
   } else if (id > 299) {
-    image = '../public/weather-images/drizzle.png';
+    image = 'drizzle.png';
   } else if (id > 199) {
-    image = '../public/weather-images/stormy.png';
+    image = 'stormy.png';
   } else {
-    image = '../public/weather-images/sunny.png';
+    image = 'sunny.png';
   }
   return image;
 }
