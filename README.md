@@ -1,6 +1,6 @@
 # WeatherApp
 
-This simple weather app allows users to search by city name and recieve a quick 3 day forecast. Data is pulled from the openweathermap API.
+This simple weather app, built with NextJS & Typescript, allows users to search by city name and recieve a quick 3 day forecast. Data is pulled from the openweathermap API.
 
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
