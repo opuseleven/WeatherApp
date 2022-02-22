@@ -1,7 +1,7 @@
 import { getCity } from '../services';
 import { City } from '../types';
 
-describe('getDay function', () => {
+describe('getCity function', () => {
 
   const testdata = require('../data/testdata.json');
   const cityData = testdata['city'];
