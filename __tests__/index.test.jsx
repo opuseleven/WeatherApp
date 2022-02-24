@@ -17,8 +17,9 @@ describe('Home', () => {
     render(<Home />);
     fireEvent.change(getByRole('input'), {target: {value: 'chicago'}});
     fireEvent.click(screen.getByRole('button'));
+    await screen.findByText('Chicago');
     const headings = screen.getAllByRole('heading');
-    await expect(headings[2]).toHaveTextContent('Chicago');
+    expect(headings[2]).toHaveTextContent('Chicago');
   })
 */
 })
