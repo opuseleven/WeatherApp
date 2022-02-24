@@ -30,7 +30,7 @@ const Home: NextPage = () => {
 
   useEffect(() => {
     refreshData()
-  }, []); // hopefully removing [data] fixed refreshing bug. TEST.
+  }, []);
 
   return (
     <div className={styles.container}>
