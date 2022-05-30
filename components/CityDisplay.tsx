@@ -1,9 +1,14 @@
 import { useState, useEffect } from 'react';
 import { getCity } from '../services';
+import { ApiData, City } from '../types';
 
-function CityDisplay({ data }) {
+interface CityDisplayProps {
+  data: ApiData
+}
 
-  const [city, setCity] = useState(null);
+const CityDisplay: React.FC<CityDisplayProps> = ({ data }) => {
+
+  const [city, setCity] = useState<City | undefined>();
 
   useEffect(() => {
     const newCity = getCity(data['city']);
