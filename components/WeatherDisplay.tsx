@@ -2,12 +2,17 @@ import { useState, useEffect } from 'react';
 import { getDay } from '../services';
 import styles from '../styles/Home.module.css';
 import { RenderImage } from '../components';
+import { ApiData, Day } from '../types';
 
-function WeatherDisplay({ data }) {
+interface WeatherDisplayProps {
+  data: ApiData
+}
 
-  const [today, setToday] = useState(null);
-  const [tomorrow, setTomorrow] = useState(null);
-  const [dayAfter, setDayAfter] = useState(null);
+const WeatherDisplay: React.FC<WeatherDisplayProps> = ({ data }) => {
+
+  const [today, setToday] = useState<Day | undefined>();
+  const [tomorrow, setTomorrow] = useState<Day | undefined>();
+  const [dayAfter, setDayAfter] = useState<Day | undefined>();
 
   useEffect(() => {
     const weatherData = data['list'];
