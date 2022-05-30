@@ -1,9 +1,12 @@
-import { useState, useEffect } from 'react';
-import { getWeatherImage } from '../services';
 import Image from 'next/image';
 import styles from '../styles/Home.module.css';
 
-function RenderImage({ image, alt }) {
+interface RenderImageProps {
+  image: string,
+  alt: string
+}
+
+const RenderImage: React.FC<RenderImageProps> = ({ image, alt }) => {
 
   return (
     <div className={styles.imagecontainer}>
