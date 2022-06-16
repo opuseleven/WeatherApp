@@ -1,7 +1,8 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
 import styles from '../styles/Home.module.css'
-import { Banner, Info, Footer, WeatherDisplay, CityDisplay, useField } from '../components'
+import { Banner, Info, Footer, WeatherDisplay, CityDisplay } from '../components'
+import { useField } from '../hooks';
 import { useState, useEffect } from 'react'
 import axios from 'axios'
 import { ApiData } from '../types';
