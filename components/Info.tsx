@@ -1,4 +1,5 @@
-function Info() {
+const Info: React.FC = () => {
+
   return(
     <div>
       <h2>Search by city name.</h2>
