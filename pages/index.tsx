@@ -12,7 +12,7 @@ const Home: NextPage = () => {
   const [citySearch, setCitySearch] = useState<string>("Nashville");
   const tempData: ApiData = require('../data/testdata.json');
   const [data, setData] = useState<ApiData>(tempData);
-  const apiKey = process.env.REACT_APP_API_KEY;
+  const apiKey = process.env.API_KEY;
   const searchInput = useField('text');
 
   function refreshData() {
