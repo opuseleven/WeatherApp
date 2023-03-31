@@ -13,7 +13,7 @@ function getDay(dayData: any) {
     weatherDescription: dayData['weather'][0]['description'],
     precipitation: Number(dayData['pop']) * 100,
     weatherId: Number(dayData['weather'][0]['id']),
-    weatherImage: '/../public/weather-images/' + image
+    weatherImage: `/weather-images/` + image
   }
   return day;
 }
