@@ -4,3 +4,4 @@ export * from './WeatherDisplay';
 export * from './Footer';
 export * from './Info';
 export * from './RenderImage';
+export * from './SearchForm';
