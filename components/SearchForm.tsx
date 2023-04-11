@@ -40,7 +40,7 @@ const SearchForm: FC<SearchFormProps> = ({ setCitySearch, zip, setZip }) => {
           Search
         </button>
         <select defaultValue={zip ? "Zip Code Search" : "City Search"}
-          onChange={(e) => handleDropdownChange(e)}
+          onChange={(e) => handleDropdownChange(e)} className={styles.dropdown}
         >
           <option value="City Search">City Search</option>
           <option value="Zip Code Search">Zip Code Search</option>
