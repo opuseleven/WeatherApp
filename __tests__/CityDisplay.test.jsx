@@ -8,6 +8,8 @@ describe('City Display Component', () => {
 
   it('Renders Component and passes data correctly', () => {
     render(<CityDisplay data={testdata} />);
-    expect(screen.getByRole('heading')).toHaveTextContent('Nashville');
+    const headings = screen.getAllByRole('heading');
+    expect(headings[0]).toHaveTextContent('Nashville');
+    expect(headings[1]).toHaveTextContent('36.1659°N x -86.7844°W');
   })
 })
