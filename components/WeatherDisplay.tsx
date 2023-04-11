@@ -15,13 +15,19 @@ const WeatherDisplay: React.FC<WeatherDisplayProps> = ({ data }) => {
   const [dayAfter, setDayAfter] = useState<Day | undefined>();
 
   useEffect(() => {
-    const weatherData = data['list'];
-    const todayDay = getDay(weatherData[0]);
-    const tomorrowDay = getDay(weatherData[1]);
-    const dayAfterDay = getDay(weatherData[2]);
-    setToday(todayDay);
-    setTomorrow(tomorrowDay);
-    setDayAfter(dayAfterDay);
+    if (data['list'].length) {
+      const weatherData = data['list'];
+      const todayDay = getDay(weatherData[0]);
+      const tomorrowDay = getDay(weatherData[1]);
+      const dayAfterDay = getDay(weatherData[2]);
+      setToday(todayDay);
+      setTomorrow(tomorrowDay);
+      setDayAfter(dayAfterDay);
+    } else {
+      setToday(undefined);
+      setTomorrow(undefined);
+      setDayAfter(undefined);
+    }
   }, [data]);
 
   return (
