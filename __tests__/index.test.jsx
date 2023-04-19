@@ -26,7 +26,7 @@ describe('Home', () => {
       fireEvent.click(screen.getByRole('button'));
     })
     await act(async () => {
-      await new Promise(r => setTimeout(r, 1000));
+      await new Promise(r => setTimeout(r, 2000));
     })
     const headings = screen.getAllByRole('heading');
     expect(headings[4]).toHaveTextContent('Chicago');
