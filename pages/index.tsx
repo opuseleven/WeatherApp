@@ -40,7 +40,7 @@ const Home: NextPage = () => {
 
   useEffect(() => {
     if (citySearch !== '') {
-      const coordsUrl = 'http://api.openweathermap.org/geo/1.0/'
+      const coordsUrl = 'https://api.openweathermap.org/geo/1.0/'
                         + (zipSearch ? 'zip?zip=' : 'direct?q=') + citySearch
                         + (zipSearch ? '' : '&limit=3') + '&appid=' + apiKey;
       axios
