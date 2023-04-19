@@ -9,9 +9,8 @@ describe('Home', () => {
     const headings = screen.getAllByRole('heading');
     expect(headings[0]).toHaveTextContent('WeatherApp');
     expect(headings[1]).toHaveTextContent('Search by city name.');
-    expect(headings[2]).toHaveTextContent('Format: "Nashville, TN"');
-    expect(headings[3]).toHaveTextContent('Or search by zip code');
-    expect(headings[4]).toHaveTextContent('Nashville');
+    expect(headings[2]).toHaveTextContent('Or search by zip code');
+    expect(headings[3]).toHaveTextContent('Nashville');
   })
 
   it('Searches by city', async () => {
@@ -20,7 +19,7 @@ describe('Home', () => {
       await new Promise(r => setTimeout(r, 1000))
     })
     act(() => {
-      fireEvent.change(screen.getByRole('textbox'), {target: {value: 'chicago, il'}});
+      fireEvent.change(screen.getByRole('textbox'), {target: {value: 'chicago'}});
     })
     act(() => {
       fireEvent.click(screen.getByRole('button'));
@@ -29,7 +28,7 @@ describe('Home', () => {
       await new Promise(r => setTimeout(r, 2000));
     })
     const headings = screen.getAllByRole('heading');
-    expect(headings[4]).toHaveTextContent('Chicago');
+    expect(headings[3]).toHaveTextContent('Chicago');
   })
 
   it('Searches by zip code', async () => {
@@ -50,7 +49,7 @@ describe('Home', () => {
       await new Promise(r => setTimeout(r, 1000));
     })
     const headings = screen.getAllByRole('heading');
-    expect(headings[4]).toHaveTextContent('Milton-Freewater');
+    expect(headings[3]).toHaveTextContent('Milton-Freewater');
   })
 
   it('Additional test for city search', async () => {
@@ -68,7 +67,7 @@ describe('Home', () => {
       await new Promise(r => setTimeout(r, 1000));
     })
     const headings = screen.getAllByRole('heading');
-    expect(headings[4]).toHaveTextContent('Paducah');
+    expect(headings[3]).toHaveTextContent('Paducah');
   })
 
   it('Additional test for zip code', async () => {
@@ -89,7 +88,7 @@ describe('Home', () => {
       await new Promise(r => setTimeout(r, 1000));
     })
     const headings = screen.getAllByRole('heading');
-    expect(headings[4]).toHaveTextContent('Nashville');
+    expect(headings[3]).toHaveTextContent('Nashville');
   })
 
   it('Returns an error if city search fails', async () => {
@@ -98,7 +97,7 @@ describe('Home', () => {
       await new Promise(r => setTimeout(r, 1000))
     })
     act(() => {
-      fireEvent.change(screen.getByRole('textbox'), {target: {value: 'peanut'}});
+      fireEvent.change(screen.getByRole('textbox'), {target: {value: 'xowlkne'}});
     })
     act(() => {
       fireEvent.click(screen.getByRole('button'));
@@ -107,7 +106,7 @@ describe('Home', () => {
       await new Promise(r => setTimeout(r, 1000));
     })
     const headings = screen.getAllByRole('heading');
-    expect(headings[4]).toHaveTextContent('Error: Error finding that city');
+    expect(headings[3]).toHaveTextContent('Error: Error finding that city');
   })
 
   it('Returns an error if zip search fails', async () => {
@@ -128,6 +127,6 @@ describe('Home', () => {
       await new Promise(r => setTimeout(r, 1000));
     })
     const headings = screen.getAllByRole('heading');
-    expect(headings[4]).toHaveTextContent('Error: Error finding that city');
+    expect(headings[3]).toHaveTextContent('Error: Error finding that city');
   })
 })
