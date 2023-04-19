@@ -40,8 +40,9 @@ const Home: NextPage = () => {
 
   useEffect(() => {
     if (citySearch !== '') {
+      const searchTerm = citySearch.split(' ').join('_');
       const coordsUrl = 'https://api.openweathermap.org/geo/1.0/'
-                        + (zipSearch ? 'zip?zip=' : 'direct?q=') + citySearch
+                        + (zipSearch ? 'zip?zip=' : 'direct?q=') + searchTerm
                         + (zipSearch ? '' : '&limit=3') + '&appid=' + apiKey;
       axios
         .request({
