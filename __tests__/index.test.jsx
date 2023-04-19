@@ -26,7 +26,7 @@ describe('Home', () => {
       fireEvent.click(screen.getByRole('button'));
     })
     await act(async () => {
-      await new Promise(r => setTimeout(r, 2000));
+      await new Promise(r => setTimeout(r, 1000));
     })
     const headings = screen.getAllByRole('heading');
     expect(headings[4]).toHaveTextContent('Chicago');
@@ -47,7 +47,7 @@ describe('Home', () => {
       fireEvent.click(screen.getByRole('button'));
     })
     await act(async () => {
-      await new Promise(r => setTimeout(r, 2000));
+      await new Promise(r => setTimeout(r, 1000));
     })
     const headings = screen.getAllByRole('heading');
     expect(headings[4]).toHaveTextContent('Milton-Freewater');
@@ -65,7 +65,7 @@ describe('Home', () => {
       fireEvent.click(screen.getByRole('button'));
     })
     await act(async () => {
-      await new Promise(r => setTimeout(r, 2000));
+      await new Promise(r => setTimeout(r, 1000));
     })
     const headings = screen.getAllByRole('heading');
     expect(headings[4]).toHaveTextContent('Paducah');
@@ -86,7 +86,7 @@ describe('Home', () => {
       fireEvent.click(screen.getByRole('button'));
     })
     await act(async () => {
-      await new Promise(r => setTimeout(r, 2000));
+      await new Promise(r => setTimeout(r, 1000));
     })
     const headings = screen.getAllByRole('heading');
     expect(headings[4]).toHaveTextContent('Nashville');
@@ -104,7 +104,7 @@ describe('Home', () => {
       fireEvent.click(screen.getByRole('button'));
     })
     await act(async () => {
-      await new Promise(r => setTimeout(r, 2000));
+      await new Promise(r => setTimeout(r, 1000));
     })
     const headings = screen.getAllByRole('heading');
     expect(headings[4]).toHaveTextContent('Error: Error finding that city');
@@ -125,7 +125,7 @@ describe('Home', () => {
       fireEvent.click(screen.getByRole('button'));
     })
     await act(async () => {
-      await new Promise(r => setTimeout(r, 2000));
+      await new Promise(r => setTimeout(r, 1000));
     })
     const headings = screen.getAllByRole('heading');
     expect(headings[4]).toHaveTextContent('Error: Error finding that city');
