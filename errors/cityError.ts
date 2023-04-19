@@ -1,4 +1,4 @@
-import { ApiData } from '../types';
+import { ApiData, City } from '../types';
 
 const cityError = () => {
   const returnError: ApiData = {
@@ -22,4 +22,13 @@ const cityError = () => {
   }
   return returnError;
 }
-export { cityError };
+
+const errorCity = () => {
+  const returnCity: City = {
+    name: 'Error',
+    lat: '',
+    lon: ''
+  }
+  return returnCity;
+}
+export { cityError, errorCity };
