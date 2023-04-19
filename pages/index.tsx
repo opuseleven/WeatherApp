@@ -42,7 +42,7 @@ const Home: NextPage = () => {
     if (citySearch !== '') {
       const coordsUrl = 'http://api.openweathermap.org/geo/1.0/'
                         + (zipSearch ? 'zip?zip=' : 'direct?q=') + citySearch
-                        + (zipSearch ? '' : 'limit=3') + '&appid=' + apiKey;
+                        + (zipSearch ? '' : '&limit=3') + '&appid=' + apiKey;
       axios
         .request({
           url: coordsUrl,
