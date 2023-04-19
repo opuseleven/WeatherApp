@@ -5,7 +5,7 @@ import { Banner, Info, SearchForm, CityDisplay, WeatherDisplay, Footer } from '.
 import { useState, useEffect } from 'react'
 import axios from 'axios'
 import { ApiData, City, ZipData, CityData } from '../types';
-import { cityError, forecastError } from '../errors';
+import { cityError, errorCity, forecastError } from '../errors';
 
 const Home: NextPage = () => {
 
@@ -17,26 +17,6 @@ const Home: NextPage = () => {
   const apiKey = process.env.API_KEY;
   const testUrl = '/api/testdata' // only used for testing
 
-
-  useEffect(() => {
-    if (citySearch !== '') {
-      const coordsUrl = 'http://api.openweathermap.org/geo/1.0/'
-                        + (zipSearch ? 'zip?zip=' : 'direct?q=') + citySearch
-                        + (zipSearch ? '' : 'limit=3') + '&appid=' + apiKey;
-      axios
-        .request({
-          url: coordsUrl,
-          method: 'get',
-          responseType: 'json',
-        })
-        .then((res) => handleCityResults(res.data))
-        .catch((err) => {
-          console.log(err);
-          const error = cityError();
-          setData(error);
-        })
-    }
-  }, [citySearch]);
 
   function handleCityResults(data: any) {
     let returnCity: City | null;
@@ -55,11 +35,38 @@ const Home: NextPage = () => {
         lon: String(cityData.lon)
       }
     }
-    setCity(returnCity);
+    return returnCity;
   }
 
   useEffect(() => {
-    if (city) {
+    if (citySearch !== '') {
+      const coordsUrl = 'http://api.openweathermap.org/geo/1.0/'
+                        + (zipSearch ? 'zip?zip=' : 'direct?q=') + citySearch
+                        + (zipSearch ? '' : 'limit=3') + '&appid=' + apiKey;
+      axios
+        .request({
+          url: coordsUrl,
+          method: 'get',
+          responseType: 'json',
+          headers: {
+            'Content-Type': 'application/x-www-form-urlencoded',
+          }
+        })
+        .then((res) => {
+          const newCity = handleCityResults(res.data);
+          setCity(newCity);
+        })
+        .catch((err) => {
+          console.log(err);
+          const error = cityError();
+          setData(error);
+        });
+    }
+  }, [citySearch]);
+
+  useEffect(() => {
+    const source = axios.CancelToken.source();
+    if (city && city.lon.length > 0 && city.lat.length > 0) {
       const forecastUrl = 'https://api.openweathermap.org/data/2.5/forecast?lat='
                   + city.lat + '&lon=' + city.lon + '&cnt=3&appid=' + apiKey;
       axios
@@ -67,13 +74,19 @@ const Home: NextPage = () => {
           url: forecastUrl,
           method: 'get',
           responseType: 'json',
+          headers: {
+            'Content-Type': 'application/x-www-form-urlencoded',
+          }
         })
-        .then((res) => setData(res.data))
+        .then((res) => {setData(res.data)})
         .catch((err) => {
           console.log(err);
           const error = forecastError();
           setData(error);
         })
+    }
+    return () => {
+      source.cancel();
     }
   }, [city])
 
