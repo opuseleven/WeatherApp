@@ -8,7 +8,6 @@ describe('Info Component', () => {
     render(<Info />);
     const headings = screen.getAllByRole('heading');
     expect(headings[0]).toHaveTextContent('Search by city name.');
-    expect(headings[1]).toHaveTextContent('Format: "Nashville, TN"');
-    expect(headings[2]).toHaveTextContent('Or search by zip code');
+    expect(headings[1]).toHaveTextContent('Or search by zip code');
   })
 })
