@@ -30,6 +30,11 @@ const WeatherDisplay: React.FC<WeatherDisplayProps> = ({ data }) => {
     }
   }, [data]);
 
+  function handlePercent(str: string) {
+    const num = Number(str);
+    return Math.round(num * 100) / 100;
+  }
+
   return (
     <div className={styles.grid}>
       <div className={styles.card}>
@@ -49,8 +54,8 @@ const WeatherDisplay: React.FC<WeatherDisplayProps> = ({ data }) => {
                 <h3>{today.weather}</h3>
                 <p>{today.weatherDescription}</p>
                 <p>Temperature: {today.temp}°F</p>
-                <p>Humidity: {today.humidity}%</p>
-                <p>Precipitation: {today.precipitation}%</p>
+                <p>Humidity: {handlePercent(today.humidity)}%</p>
+                <p>Precipitation: {handlePercent(String(today.precipitation))}%</p>
               </div>
             )
           }
