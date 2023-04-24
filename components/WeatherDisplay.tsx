@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { getDay } from '../services';
 import styles from '../styles/Home.module.css';
-import { RenderImage } from '../components';
+import { RenderImage, DefaultDayView } from '../components';
 import { ApiData, Day } from '../types';
 
 interface WeatherDisplayProps {
@@ -30,11 +30,6 @@ const WeatherDisplay: React.FC<WeatherDisplayProps> = ({ data }) => {
     }
   }, [data]);
 
-  function handlePercent(str: string) {
-    const num = Number(str);
-    return Math.round(num * 100) / 100;
-  }
-
   return (
     <div className={styles.grid}>
       <div className={styles.card}>
@@ -50,13 +45,7 @@ const WeatherDisplay: React.FC<WeatherDisplayProps> = ({ data }) => {
         <div>
           {
             today && (
-              <div>
-                <h3>{today.weather}</h3>
-                <p>{today.weatherDescription}</p>
-                <p>Temperature: {today.temp}°F</p>
-                <p>Humidity: {handlePercent(today.humidity)}%</p>
-                <p>Precipitation: {handlePercent(String(today.precipitation))}%</p>
-              </div>
+              <DefaultDayView day={today} />
             )
           }
         </div>
@@ -74,12 +63,7 @@ const WeatherDisplay: React.FC<WeatherDisplayProps> = ({ data }) => {
         <div>
           {
             tomorrow && (
-              <div>
-                <h3>{tomorrow.weather}</h3>
-                <p>Temperature: {tomorrow.temp}°F</p>
-                <p>Humidity: {tomorrow.humidity}%</p>
-                <p>Precipitation: {tomorrow.precipitation}%</p>
-              </div>
+              <DefaultDayView day={tomorrow} />
             )
           }
         </div>
@@ -97,12 +81,7 @@ const WeatherDisplay: React.FC<WeatherDisplayProps> = ({ data }) => {
         <div>
           {
             dayAfter && (
-              <div>
-                <h3>{dayAfter.weather}</h3>
-                <p>Temperature: {dayAfter.temp}°F</p>
-                <p>Humidity: {dayAfter.humidity}%</p>
-                <p>Precipitation: {dayAfter.precipitation}%</p>
-              </div>
+              <DefaultDayView day={dayAfter} />
             )
           }
         </div>
