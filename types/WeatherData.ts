@@ -24,7 +24,8 @@ export interface WeatherData {
   },
   wind: {
     speed: number,
-    deg: number
+    deg: number,
+    gust: number
   },
   visibility: number,
   pop: number,
