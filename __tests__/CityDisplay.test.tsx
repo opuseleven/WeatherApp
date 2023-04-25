@@ -11,5 +11,6 @@ describe('City Display Component', () => {
     const headings = screen.getAllByRole('heading');
     expect(headings[0]).toHaveTextContent('Nashville');
     expect(headings[1]).toHaveTextContent('36.1659°N x -86.7844°W');
+    expect(headings[2]).toHaveTextContent('Sunrise:');
   })
 })
