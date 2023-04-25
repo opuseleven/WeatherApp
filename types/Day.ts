@@ -10,6 +10,7 @@ export interface Day {
   cloud_coverage: number,
   wind_speed: number,
   gusts: number,
+  wind_dir: string,
   visibility: number,
   weatherId: number,
   weatherImage: string
