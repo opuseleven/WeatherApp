@@ -29,7 +29,7 @@ const ExpandedDayView: FC<ExpandedDayViewProps> = ({ day }) => {
       <p role="detail">Wind Speed: {mpsToMph(String(day.wind_speed))} mph</p>
       <p role="detail">Gusts: {mpsToMph(String(day.gusts))} mph</p>
       <p role="detail">Wind Direction: {day.wind_dir}</p>
-      <p role="detail">Visibility: {day.visibility} m</p>
+      <p role="detail">Visibility: {day.visibility}m</p>
     </div>
   )
 }
