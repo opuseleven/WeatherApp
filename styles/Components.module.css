@@ -19,3 +19,18 @@
 .dropdown {
   padding-left: 8px;
 }
+
+.citydisplaycontainer {
+  display: flex;
+  flex-direction: column;
+}
+
+.horizontalcontainer {
+  display: flex;
+  flex-direction: row;
+}
+
+.horizontalheading {
+  padding-left: 16px;
+  padding-right: 16px;
+}
