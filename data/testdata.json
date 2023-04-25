@@ -29,7 +29,8 @@
       },
       "wind" : {
         "speed" : 2.1000000000000001,
-        "deg" : 159
+        "deg" : 159,
+        "gust": 4.21
       },
       "visibility" : 10000,
       "pop" : 0,
@@ -64,7 +65,8 @@
       },
       "wind" : {
         "speed" : 1.47,
-        "deg" : 165
+        "deg" : 165,
+        "gust": 0
       },
       "visibility" : 10000,
       "pop" : 0,
@@ -139,7 +141,7 @@
                 "gust": 4
             },
             "visibility": 10000,
-            "pop": 0,
+            "pop": 0.1,
             "sys": {
                 "pod": "n"
             },
