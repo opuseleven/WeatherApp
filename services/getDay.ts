@@ -1,4 +1,4 @@
-import { Day } from '../types';
+import { Day, DayInterface } from '../types';
 import { getWeatherImage, convertWindDegToDir } from '../services';
 
 function getDay(dayData: any) {
@@ -6,7 +6,7 @@ function getDay(dayData: any) {
   const idString: any = dayData['weather'][0]['id'];
   const image: string = getWeatherImage(idString);
 
-  const day: Day = {
+  const dayInterface: DayInterface = {
     weather: dayData['weather'][0]['main'],
     temp: parseInt(String((dayData['main']['temp'] * 1.8 - 459.67)), 10),
     feels_like: parseInt(String((dayData['main']['feels_like'] * 1.8 - 459.67)), 10),
@@ -23,6 +23,7 @@ function getDay(dayData: any) {
     weatherId: Number(dayData['weather'][0]['id']),
     weatherImage: `/weather-images/` + image
   }
+  const day = new Day(dayInterface);
   return day;
 }
 export { getDay };
