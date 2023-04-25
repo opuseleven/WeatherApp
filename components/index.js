@@ -6,3 +6,4 @@ export * from './Info';
 export * from './RenderImage';
 export * from './SearchForm';
 export * from './DefaultDayView';
+export * from './ExpandedDayView';
