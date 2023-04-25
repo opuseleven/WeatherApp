@@ -74,40 +74,77 @@
       "dt_txt" : "2021-03-30 00:00:00"
     },
     {
-      "dt" : 1617073200,
-      "main" : {
-        "temp" : 283.99000000000001,
-        "feels_like" : 281.48000000000002,
-        "temp_min" : 283.56,
-        "temp_max" : 283.99000000000001,
-        "pressure" : 1022,
-        "sea_level" : 1022,
-        "grnd_level" : 1004,
-        "humidity" : 66,
-        "temp_kf" : 0.42999999999999999
-      },
-      "weather" : [
+            "dt": 1682391600,
+            "main": {
+                "temp": 285.1,
+                "feels_like": 283.6,
+                "temp_min": 278.79,
+                "temp_max": 285.1,
+                "pressure": 1018,
+                "sea_level": 1018,
+                "grnd_level": 1008,
+                "humidity": 48,
+                "temp_kf": 6.31
+            },
+            "weather": [
+                {
+                    "id": 800,
+                    "main": "Clear",
+                    "description": "clear sky",
+                    "icon": "01n"
+                }
+            ],
+            "clouds": {
+                "all": 1
+            },
+            "wind": {
+                "speed": 2.06,
+                "deg": 54,
+                "gust": 4.21
+            },
+            "visibility": 10000,
+            "pop": 0,
+            "sys": {
+                "pod": "n"
+            },
+            "dt_txt": "2023-04-25 03:00:00"
+        },
         {
-          "id" : 800,
-          "main" : "Clear",
-          "description" : "clear sky",
-          "icon" : "01n"
+            "dt": 1682402400,
+            "main": {
+                "temp": 281.39,
+                "feels_like": 280.3,
+                "temp_min": 277.96,
+                "temp_max": 281.39,
+                "pressure": 1020,
+                "sea_level": 1020,
+                "grnd_level": 1007,
+                "humidity": 58,
+                "temp_kf": 3.43
+            },
+            "weather": [
+                {
+                    "id": 801,
+                    "main": "Clouds",
+                    "description": "few clouds",
+                    "icon": "02n"
+                }
+            ],
+            "clouds": {
+                "all": 17
+            },
+            "wind": {
+                "speed": 1.99,
+                "deg": 68,
+                "gust": 4
+            },
+            "visibility": 10000,
+            "pop": 0,
+            "sys": {
+                "pod": "n"
+            },
+            "dt_txt": "2023-04-25 06:00:00"
         }
-      ],
-      "clouds" : {
-        "all" : 0
-      },
-      "wind" : {
-        "speed" : 1.8999999999999999,
-        "deg" : 164
-      },
-      "visibility" : 10000,
-      "pop" : 0,
-      "sys" : {
-        "pod" : "n"
-      },
-      "dt_txt" : "2021-03-30 03:00:00"
-    }
   ],
   "city" : {
     "id" : 4644585,
