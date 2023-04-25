@@ -26,6 +26,6 @@ describe('DefaultDayView Component', () => {
     expect(details[0]).toHaveTextContent('few clouds');
     expect(details[1]).toHaveTextContent('Temperature: 46°F');
     expect(details[2]).toHaveTextContent('Humidity: 58%');
-    expect(details[3]).toHaveTextContent('Precipitation: 0%');
+    expect(details[3]).toHaveTextContent('Precipitation: 10%');
   })
 })
