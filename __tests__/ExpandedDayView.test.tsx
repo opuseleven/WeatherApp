@@ -22,7 +22,7 @@ describe('ExpandedDayView Component', () => {
     expect(details[7]).toHaveTextContent('Wind Speed: 4.7 mph');
     expect(details[8]).toHaveTextContent('Gusts: 9.42 mph');
     expect(details[9]).toHaveTextContent('Wind Direction: SSE');
-    expect(details[10]).toHaveTextContent('Visibility: 10000 m');
+    expect(details[10]).toHaveTextContent('Visibility: 10000m');
   })
 
   it('Component passes data', () => {
@@ -40,6 +40,6 @@ describe('ExpandedDayView Component', () => {
     expect(details[7]).toHaveTextContent('Wind Speed: 4.45 mph');
     expect(details[8]).toHaveTextContent('Gusts: 8.95 mph');
     expect(details[9]).toHaveTextContent('Wind Direction: ENE');
-    expect(details[10]).toHaveTextContent('Visibility: 10000 m');
+    expect(details[10]).toHaveTextContent('Visibility: 10000m');
   })
 })
