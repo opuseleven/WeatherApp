@@ -1,5 +1,6 @@
 import { FC } from 'react';
 import { Day } from '../types';
+import styles from '../styles/Components.module.css';
 
 interface DefaultDayViewProps {
   day: Day
@@ -14,10 +15,12 @@ const DefaultDayView: FC<DefaultDayViewProps> = ({ day }) => {
   return (
     <div>
       <h3>{day.weather}</h3>
-      <p>{day.weatherDescription.charAt(0).toUpperCase()}</p>
-      <p>Temperature: {day.temp}°F</p>
-      <p>Humidity: {handlePercent(day.humidity)}%</p>
-      <p>Precipitation: {handlePercent(String(day.precipitation))}%</p>
+      <p role='detail' className={styles.capitalize}>
+        {day.weatherDescription}
+      </p>
+      <p role='detail'>Temperature: {day.temp}°F</p>
+      <p role='detail'>Humidity: {handlePercent(day.humidity)}%</p>
+      <p role='detail'>Precipitation: {handlePercent(String(day.precipitation))}%</p>
     </div>
   )
 }
