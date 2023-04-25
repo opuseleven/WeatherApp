@@ -1,5 +1,5 @@
 import { Day } from '../types';
-import { getWeatherImage } from '../services';
+import { getWeatherImage, convertWindDegToDir } from '../services';
 
 function getDay(dayData: any) {
 
@@ -18,6 +18,7 @@ function getDay(dayData: any) {
     cloud_coverage: dayData['clouds']['all'],
     wind_speed: dayData['wind']['speed'],
     gusts: dayData['wind']['gust'],
+    wind_dir: convertWindDegToDir(dayData['wind']['deg']),
     visibility: dayData['visibility'],
     weatherId: Number(dayData['weather'][0]['id']),
     weatherImage: `/weather-images/` + image
