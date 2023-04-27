@@ -21,24 +21,33 @@ const Home: NextPage = () => {
   function handleCityResults(data: any) {
     let returnCity: City | null;
     if (zipSearch) {
-      const zipData: ZipData = data;
-      returnCity = {
-        name: zipData.name,
-        lat: String(zipData.lat),
-        lon: String(zipData.lon)
+      try {
+        const zipData: ZipData = data;
+        returnCity = {
+          name: zipData.name,
+          lat: String(zipData.lat),
+          lon: String(zipData.lon)
+        }
+      } catch {
+        returnCity = errorCity();
       }
     } else {
-      const cityData: CityData = data[0];
-      returnCity = {
-        name: cityData.name,
-        lat: String(cityData.lat),
-        lon: String(cityData.lon)
+      try {
+        const cityData: CityData = data[0];
+        returnCity = {
+          name: cityData.name,
+          lat: String(cityData.lat),
+          lon: String(cityData.lon)
+        }
+      } catch {
+        returnCity = errorCity();
       }
     }
     return returnCity;
   }
 
   useEffect(() => {
+    const source = axios.CancelToken.source();
     if (citySearch !== '') {
       const searchTerm = citySearch.split(' ').join('_');
       const coordsUrl = 'https://api.openweathermap.org/geo/1.0/'
@@ -55,13 +64,20 @@ const Home: NextPage = () => {
         })
         .then((res) => {
           const newCity = handleCityResults(res.data);
-          setCity(newCity);
+          if (newCity.name === "Error") {
+            setData(cityError());
+          } else {
+            setCity(newCity);
+          }
         })
         .catch((err) => {
           console.log(err);
           const error = cityError();
           setData(error);
         });
+    }
+    return () => {
+      source.cancel();
     }
   }, [citySearch]);
 
