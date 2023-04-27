@@ -24,11 +24,7 @@ describe('Home', () => {
     act(() => {
       fireEvent.click(screen.getByRole('button'));
     })
-    await act(async () => {
-      await new Promise(r => setTimeout(r, 2000));
-    })
-    const headings = screen.getAllByRole('heading');
-    expect(headings[3]).toHaveTextContent('Chicago');
+    expect(await screen.findByText('Chicago')).toBeInTheDocument();
   })
 
   it('Searches by zip code', async () => {
@@ -45,11 +41,7 @@ describe('Home', () => {
     act(() => {
       fireEvent.click(screen.getByRole('button'));
     })
-    await act(async () => {
-      await new Promise(r => setTimeout(r, 2000));
-    })
-    const headings = screen.getAllByRole('heading');
-    expect(headings[3]).toHaveTextContent('Milton-Freewater');
+    expect(await screen.findByText('Milton-Freewater')).toBeInTheDocument();
   })
 
   it('Additional test for city search', async () => {
@@ -63,11 +55,7 @@ describe('Home', () => {
     act(() => {
       fireEvent.click(screen.getByRole('button'));
     })
-    await act(async () => {
-      await new Promise(r => setTimeout(r, 2000));
-    })
-    const headings = screen.getAllByRole('heading');
-    expect(headings[3]).toHaveTextContent('Paducah');
+    expect(await screen.findByText('Paducah')).toBeInTheDocument();
   })
 
   it('Additional test for zip code', async () => {
@@ -84,11 +72,7 @@ describe('Home', () => {
     act(() => {
       fireEvent.click(screen.getByRole('button'));
     })
-    await act(async () => {
-      await new Promise(r => setTimeout(r, 2000));
-    })
-    const headings = screen.getAllByRole('heading');
-    expect(headings[3]).toHaveTextContent('Nashville');
+    expect(await screen.findByText('Nashville')).toBeInTheDocument();
   })
 
   it('Returns an error if city search fails', async () => {
@@ -102,11 +86,7 @@ describe('Home', () => {
     act(() => {
       fireEvent.click(screen.getByRole('button'));
     })
-    await act(async () => {
-      await new Promise(r => setTimeout(r, 2000));
-    })
-    const headings = screen.getAllByRole('heading');
-    expect(headings[3]).toHaveTextContent('Error: Error finding that city');
+    expect(await screen.findByText('Error: Error finding that city.')).toBeInTheDocument();
   })
 
   it('Returns an error if zip search fails', async () => {
@@ -123,10 +103,6 @@ describe('Home', () => {
     act(() => {
       fireEvent.click(screen.getByRole('button'));
     })
-    await act(async () => {
-      await new Promise(r => setTimeout(r, 2000));
-    })
-    const headings = screen.getAllByRole('heading');
-    expect(headings[3]).toHaveTextContent('Error: Error finding that city');
+    expect(await screen.findByText('Error: Error finding that city.')).toBeInTheDocument();
   })
 })
