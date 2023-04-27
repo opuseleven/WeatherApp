@@ -103,7 +103,7 @@ describe('Home', () => {
       fireEvent.click(screen.getByRole('button'));
     })
     await act(async () => {
-      await new Promise(r => setTimeout(r, 3000));
+      await new Promise(r => setTimeout(r, 2000));
     })
     const headings = screen.getAllByRole('heading');
     expect(headings[3]).toHaveTextContent('Error: Error finding that city');
@@ -124,7 +124,7 @@ describe('Home', () => {
       fireEvent.click(screen.getByRole('button'));
     })
     await act(async () => {
-      await new Promise(r => setTimeout(r, 3000));
+      await new Promise(r => setTimeout(r, 2000));
     })
     const headings = screen.getAllByRole('heading');
     expect(headings[3]).toHaveTextContent('Error: Error finding that city');
