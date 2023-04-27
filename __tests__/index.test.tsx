@@ -94,16 +94,10 @@ describe('Home', () => {
   it('Returns an error if city search fails', async () => {
     render(<Home />);
     await act(async () => {
-      await new Promise(r => setTimeout(r, 1000))
-    })
-    act(() => {
+      await new Promise(r => setTimeout(r, 1000));
       fireEvent.change(screen.getByRole('textbox'), {target: {value: 'xowlkne'}});
-    })
-    act(() => {
       fireEvent.click(screen.getByRole('button'));
-    })
-    await act(async () => {
-      await new Promise(r => setTimeout(r, 2000));
+      await new Promise(r => setTimeout(r, 3000));
     })
     const headings = screen.getAllByRole('heading');
     expect(headings[3]).toHaveTextContent('Error: Error finding that city');
@@ -112,19 +106,15 @@ describe('Home', () => {
   it('Returns an error if zip search fails', async () => {
     render(<Home />);
     await act(async () => {
-      await new Promise(r => setTimeout(r, 1000))
-    })
-    act(() => {
+      await new Promise(r => setTimeout(r, 1000));
       fireEvent.change(screen.getByRole('combobox'), {target: {value: 'Zip Code Search'}});
     })
     act(() => {
       fireEvent.change(screen.getByRole('textbox'), {target: {value: '37296'}});
     })
-    act(() => {
-      fireEvent.click(screen.getByRole('button'));
-    })
     await act(async () => {
-      await new Promise(r => setTimeout(r, 2000));
+      fireEvent.click(screen.getByRole('button'));
+      await new Promise(r => setTimeout(r, 3000));
     })
     const headings = screen.getAllByRole('heading');
     expect(headings[3]).toHaveTextContent('Error: Error finding that city');
