@@ -101,8 +101,8 @@ describe('Home', () => {
     await act(async () => {
       await new Promise(r => setTimeout(r, 1000));
     })
-    expect(await screen.findByText('Error: Error finding that city.')).toBeInTheDocument();
     screen.debug();
+    expect(await screen.findByText('Error: Error finding that city.')).toBeInTheDocument();
   })
 
   it('Returns an error if zip search fails', async () => {
