@@ -46,14 +46,14 @@ const Home: NextPage = () => {
     return returnCity;
   }
 
-  useEffect(() => {
+  useEffect(async () => {
     const source = axios.CancelToken.source();
     if (citySearch !== '') {
       const searchTerm = citySearch.split(' ').join('_');
       const coordsUrl = 'https://api.openweathermap.org/geo/1.0/'
                         + (zipSearch ? 'zip?zip=' : 'direct?q=') + searchTerm
                         + (zipSearch ? '' : '&limit=3') + '&appid=' + apiKey;
-      axios
+      await axios
         .request({
           url: coordsUrl,
           method: 'get',
@@ -81,12 +81,12 @@ const Home: NextPage = () => {
     }
   }, [citySearch]);
 
-  useEffect(() => {
+  useEffect(async () => {
     const source = axios.CancelToken.source();
     if (city && city.lon.length > 0 && city.lat.length > 0) {
       const forecastUrl = 'https://api.openweathermap.org/data/2.5/forecast?lat='
                   + city.lat + '&lon=' + city.lon + '&cnt=3&appid=' + apiKey;
-      axios
+      await axios
         .request({
           url: forecastUrl,
           method: 'get',
