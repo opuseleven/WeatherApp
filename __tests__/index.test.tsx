@@ -87,6 +87,7 @@ describe('Home', () => {
       fireEvent.click(screen.getByRole('button'));
     })
     expect(await screen.findByText('Error: Error finding that city.')).toBeInTheDocument();
+    screen.debug();
   })
 
   it('Returns an error if zip search fails', async () => {
