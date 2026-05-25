@@ -25,7 +25,7 @@ describe('Home', () => {
       fireEvent.click(screen.getByRole('button'));
     })
     await act(async () => {
-      await new Promise(r => setTimeout(r, 2000));
+      await new Promise(r => setTimeout(r, 1500));
     })
     expect(await screen.findByText('Chicago')).toBeInTheDocument();
   })
@@ -45,7 +45,7 @@ describe('Home', () => {
       fireEvent.click(screen.getByRole('button'));
     })
     await act(async () => {
-      await new Promise(r => setTimeout(r, 2000));
+      await new Promise(r => setTimeout(r, 1500));
     })
     expect(await screen.findByText('Milton-Freewater')).toBeInTheDocument();
   })
@@ -62,7 +62,7 @@ describe('Home', () => {
       fireEvent.click(screen.getByRole('button'));
     })
     await act(async () => {
-      await new Promise(r => setTimeout(r, 2000));
+      await new Promise(r => setTimeout(r, 1500));
     })
     expect(await screen.findByText('Paducah')).toBeInTheDocument();
   })
@@ -82,7 +82,7 @@ describe('Home', () => {
       fireEvent.click(screen.getByRole('button'));
     })
     await act(async () => {
-      await new Promise(r => setTimeout(r, 2000));
+      await new Promise(r => setTimeout(r, 1500));
     })
     expect(await screen.findByText('Nashville')).toBeInTheDocument();
   })
@@ -99,7 +99,7 @@ describe('Home', () => {
       fireEvent.click(screen.getByRole('button'));
     })
     await act(async () => {
-      await new Promise(r => setTimeout(r, 2000));
+      await new Promise(r => setTimeout(r, 1500));
     })
     expect(await screen.findByText('Error: Error finding that city.')).toBeInTheDocument();
   })
@@ -119,7 +119,7 @@ describe('Home', () => {
       fireEvent.click(screen.getByRole('button'));
     })
     await act(async () => {
-      await new Promise(r => setTimeout(r, 2000));
+      await new Promise(r => setTimeout(r, 1500));
     })
     expect(await screen.findByText('Error: Error finding that city.')).toBeInTheDocument();
   })
